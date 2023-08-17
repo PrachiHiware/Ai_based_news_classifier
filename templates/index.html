@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI-Powered News Article Classifier with History</title>
+</head>
+<body align="center" style="background-image: url('https://img.freepik.com/free-vector/wave-background-abstract-gradient-design_483537-3688.jpg');background-size: cover;">
+    
+    <p style="margin-top: 20px;"><h1 align="center" style="color:yellow;">AI-Powered News Article Classifier with History</h1></p>
+    <div  style="text-align:justify; align-content: center; width:550px; padding:10px 50px 10px 50px;margin:auto;border: 1px solid gray; background-color:white;">       
+        <p>
+            <ol>
+                <li><h4>Classify a News Article</h4>
+                <ol>
+                <li><b>Enter Article URL:</b> On the homepage, You can input the URL of the news article you want to categorise in the box on the homepage.</li>
+                <li><b>Submit the URL:</b> Enter the URL and select "Classify" from the menu. The software will download the article's content, use AI to determine its category, and display the predicted category on the screen.</li>
+                <li><b>Repeat Classification:</b> By entering the URLs and selecting "Classify" each time, you can classify several articles at once.</li>
+                </ol>
+            </li>
+            
+                    <li><h4> View Classification History</h4>
+                    <ol>
+                        <li><b>Navigate to History:</b>Click on the "History" item in the navigation menu to see a history of previous classification requests.
+                        </li>
+                        <li><b>History Page:</b>Your browser will then direct you to a website with a table showing the history of your classification requests. The article URL, projected category, and request timestamp are all listed in columns in the table.
+                        </li>
+                        <li><b>Review History:</b> Using the application, you can examine the whole history of categorization requests you've sent.</li>
+                        <li><b>Back to Classification:</b> You can click the "Back to Classification" link at the bottom of the history page to return to the article categorization page.                        </li>
+                    </ol></li>
+
+                </ol>
+        
+        
+            </ol>
+        </p>
+    </div>
+    <div align="justify" style="width:500px; padding:20px 75px 50px 75px;margin:auto; border: 1px solid gray; margin-top: 20px;margin-bottom:20px;background-color:white; "> 
+        <div align="center">
+        <form method="POST">
+        <label  for="url" style="font-size: 18px" >Article URL:</label><br><br>
+        <input  style="width: 350px; height:40px; margin-bottom:20px" type="text" name="url" id="url" required >
+        <button style=" background-color:#4CAF50;
+                        border: none;
+                        color: white;
+                        padding: 15px 32px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;" 
+                type="submit" >
+                        Classify
+        </button>
+        </div>
+    </form>
+        {% if predicted_category %}
+    <p>Predicted Category: {{ predicted_category }}</p>
+    {% endif %}
+   
+    <div align="center" >
+    <button style=" background-color:#4CAF50;
+                    border: none;
+                    color: white;
+                    padding: 15px 32px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;" 
+            type="submit"
+            onclick="window.location.href = '{{ url_for('history') }}';">
+            View Classification History
+    </button>
+    </div></div>
+</body>
+</html>
